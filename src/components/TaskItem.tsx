@@ -32,7 +32,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({
   const [editDueDate, setEditDueDate] = useState(task.dueDate || '');
 
   const categoryColor = CATEGORY_COLORS[task.category] || CATEGORY_COLORS.General;
-  const priorityCfg = PRIORITY_CONFIG[task.prio];
+  const priorityCfg = PRIORITY_CONFIG[task.priority] ?? PRIORITY_CONFIG.medium;
 
   const isOverdue =
     !task.completed &&
